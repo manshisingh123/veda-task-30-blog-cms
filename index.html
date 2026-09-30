@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Client-Side Blog CMS</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>📝 Client-Side Blog CMS</h1>
+            <p>Create, edit and manage your blog posts</p>
+        </header>
+
+        <!-- Post Form -->
+        <section class="form-section">
+
+            <h2 id="formTitle">Create New Post</h2>
+
+            <form id="postForm">
+
+                <input type="hidden" id="postId">
+
+                <div class="form-group">
+                    <label for="title">Post Title</label>
+
+                    <input
+                        type="text"
+                        id="title"
+                        placeholder="Enter post title"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="content">Post Content</label>
+
+                    <textarea
+                        id="content"
+                        rows="7"
+                        placeholder="Write your blog post..."
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="status">Status</label>
+
+                    <select id="status">
+                        <option value="draft">Draft</option>
+                        <option value="published">Published</option>
+                    </select>
+                </div>
+
+                <div class="button-group">
+
+                    <button type="submit" class="primary-btn">
+                        Save Post
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancelBtn"
+                        class="secondary-btn"
+                        style="display: none;"
+                    >
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- Filter Section -->
+        <section class="filter-section">
+
+            <h2>Blog Posts</h2>
+
+            <select id="filterStatus">
+
+                <option value="all">
+                    All Posts
+                </option>
+
+                <option value="published">
+                    Published
+                </option>
+
+                <option value="draft">
+                    Draft
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- Posts -->
+        <section id="postsContainer" class="posts-container">
+
+        </section>
+
+
+        <!-- Empty Message -->
+        <p id="emptyMessage" class="empty-message">
+            No posts available.
+        </p>
+
+    </div>
+
+
+    <!-- Preview Modal -->
+
+    <div id="previewModal" class="modal">
+
+        <div class="modal-content">
+
+            <span id="closeModal" class="close">
+                &times;
+            </span>
+
+            <h2 id="previewTitle"></h2>
+
+            <p id="previewDate" class="date"></p>
+
+            <span id="previewStatus" class="status"></span>
+
+            <div id="previewContent" class="preview-content"></div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
